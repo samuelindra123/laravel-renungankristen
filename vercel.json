@@ -8,6 +8,7 @@
             "use": "vercel-php@0.7.1", 
             
             "config": {
+                
                 "storage": "storage/framework/cache,storage/framework/sessions,storage/framework/views,storage/logs,bootstrap/cache"
             }
         },
