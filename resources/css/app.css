@@ -1,11 +1,120 @@
+/*
+|--------------------------------------------------------------------------
+| File app.css (Sudah dikonfigurasi untuk Tailwind v4)
+|--------------------------------------------------------------------------
+|
+| Ini adalah file CSS utamamu.
+| Kita akan mengimpor Tailwind dan mengkonfigurasi tema di sini.
+|
+*/
+
+/* 1. Impor Tailwind */
 @import 'tailwindcss';
 
+/* 2. Sumber (biarkan default) */
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+/*
+|--------------------------------------------------------------------------
+| Konfigurasi Tema
+|--------------------------------------------------------------------------
+*/
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    /* Font */
+    --font-family-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+
+    /* 
+    | ====================================================================
+    | PERBAIKAN FINAL:
+    | Di Tailwind v4, color palette didefinisikan dengan sintaks berbeda
+    | Gunakan format: --color-nama-*: nilai;
+    | ====================================================================
+    */
+
+    /* Palet Warna Primary */
+    --color-primary-50: #eff6ff;
+    --color-primary-100: #dbeafe;
+    --color-primary-200: #bfdbfe;
+    --color-primary-300: #93c5fd;
+    --color-primary-400: #60a5fa;
+    --color-primary-500: #3b82f6;
+    --color-primary-600: #2563eb;
+    --color-primary-700: #1d4ed8;
+    --color-primary-800: #1e40af;
+    --color-primary-900: #1e3a8a;
+    --color-primary-950: #172554;
+    --color-primary: #3b82f6; /* DEFAULT */
+
+    /* Palet Warna Secondary */
+    --color-secondary-500: #6b7280;
+    --color-secondary-600: #4b5563;
+    --color-secondary: #6b7280; /* DEFAULT */
+
+    /* Warna Kustom Tambahan */
+    --color-light-bg: #f9fafb;
+    --color-dark-text: #1f2937;
+    --color-light-text: #ffffff;
+    --color-light-border: #e5e7eb;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Lapisan (Layers) Kustom
+|--------------------------------------------------------------------------
+*/
+
+/* @layer base */
+@layer base {
+    body {
+        @apply font-sans antialiased; 
+        color: var(--color-dark-text);
+        background-color: white;
+        line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold;
+    }
+}
+
+/* @layer utilities */
+@layer utilities {
+    .container {
+        @apply w-[90%] max-w-6xl mx-auto;
+    }
+}
+
+/* @layer components */
+@layer components {
+    /* Kelas DASAR .btn */
+    .btn {
+        @apply inline-block px-6 py-3 rounded-lg font-semibold no-underline transition duration-300 ease-in-out;
+    }
+
+    /* Button Primary */
+    .btn-primary {
+        background-color: var(--color-primary-600);
+        color: var(--color-light-text);
+    }
+    .btn-primary:hover {
+        background-color: var(--color-primary-700);
+    }
+
+    /* Button Secondary */
+    .btn-secondary {
+        background-color: var(--color-light-bg); 
+        color: var(--color-dark-text);
+        border: 1px solid var(--color-light-border);
+    }
+    .btn-secondary:hover {
+        background-color: var(--color-light-border);
+    }
+
+    /* Button Large */
+    .btn-lg {
+        @apply text-lg px-8 py-4;
+    }
 }
