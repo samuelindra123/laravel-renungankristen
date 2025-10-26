@@ -96,6 +96,7 @@ return [
             'prefix_indexes' => true,
             'search_path' => 'public',
             'sslmode' => 'prefer',
+            'url' => env('DATABASE_URL'),
         ],
 
         'sqlsrv' => [
