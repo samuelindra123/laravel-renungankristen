@@ -42,8 +42,8 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-dark-text mb-3">Email Kami</h3>
-                <a href="mailto:hello@renunganapp.com" class="text-primary-600 font-semibold hover:underline">
-                    hello@renunganapp.com
+                <a href="mailto:comdonate9@gmail.com" class="text-primary-600 font-semibold hover:underline">
+                    comdonate9@gmail.com
                 </a>
                 <p class="text-gray-600 text-sm mt-2">
                     Respon dalam 24 jam
@@ -58,8 +58,8 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-dark-text mb-3">WhatsApp</h3>
-                <a href="https://wa.me/6281234567890" class="text-secondary-600 font-semibold hover:underline">
-                    +62 812-3456-7890
+                <a href="https://wa.me/62882019494158" class="text-secondary-600 font-semibold hover:underline">
+                    +62 882-0194-0194158
                 </a>
                 <p class="text-gray-600 text-sm mt-2">
                     Chat langsung dengan kami
@@ -103,7 +103,7 @@
                     </p>
                 </div>
 
-                {{-- FAQ Quick Links --}}
+                {{-- FAQ Quick Links (Dropdown Style) --}}
                 <div class="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-200">
                     <h3 class="font-bold text-dark-text mb-4 flex items-center gap-2">
                         <svg class="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
@@ -111,71 +111,63 @@
                         </svg>
                         Pertanyaan Umum
                     </h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="#" class="text-gray-600 hover:text-primary-600 flex items-center gap-2 group">
-                                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    <div class="space-y-4">
+                        {{-- FAQ 1 --}}
+                        <details class="group">
+                            <summary class="flex justify-between items-center font-medium text-gray-700 hover:text-primary-600 cursor-pointer list-none">
+                                <span>Bagaimana cara mendaftar?</span>
+                                <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
-                                Bagaimana cara mendaftar?
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-gray-600 hover:text-primary-600 flex items-center gap-2 group">
-                                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </summary>
+                            <p class="text-gray-600 mt-2 text-sm leading-relaxed pt-2 border-t border-gray-100">
+                                Anda dapat mendaftar dengan mengklik tombol "Daftar" di pojok kanan atas halaman. Isi formulir dengan nama, email, dan password Anda, lalu klik "Buat Akun".
+                            </p>
+                        </details>
+                        
+                        {{-- FAQ 2 --}}
+                        <details class="group">
+                            <summary class="flex justify-between items-center font-medium text-gray-700 hover:text-primary-600 cursor-pointer list-none">
+                                <span>Apakah benar-benar gratis?</span>
+                                <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
-                                Apakah benar-benar gratis?
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-gray-600 hover:text-primary-600 flex items-center gap-2 group">
-                                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                </svg>
-                                Bagaimana cara bergabung dengan komunitas?
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-primary-600 font-semibold flex items-center gap-2 group">
-                                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                </svg>
-                                Lihat semua FAQ
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                            </summary>
+                            <p class="text-gray-600 mt-2 text-sm leading-relaxed pt-2 border-t border-gray-100">
+                                Ya, platform kami 100% gratis untuk semua pengguna. Kami didukung oleh donasi sukarela untuk menjalankan pelayanan ini.
+                            </p>
+                        </details>
 
-                {{-- Office Hours --}}
-                <div class="bg-gradient-to-br from-primary-50 to-white p-6 rounded-xl border border-primary-200">
-                    <h3 class="font-bold text-dark-text mb-4 flex items-center gap-2">
-                        <svg class="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
-                        </svg>
-                        Jam Operasional
-                    </h3>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Senin - Jumat</span>
-                            <span class="font-semibold text-dark-text">09:00 - 17:00 WIB</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Sabtu</span>
-                            <span class="font-semibold text-dark-text">09:00 - 15:00 WIB</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Minggu</span>
-                            <span class="font-semibold text-primary-600">Tutup (Ibadah)</span>
-                        </div>
+                        {{-- FAQ 3 --}}
+                        <details class="group">
+                            <summary class="flex justify-between items-center font-medium text-gray-700 hover:text-primary-600 cursor-pointer list-none">
+                                <span>Bagaimana cara bergabung dengan komunitas?</span>
+                                <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </summary>
+                            <p class="text-gray-600 mt-2 text-sm leading-relaxed pt-2 border-t border-gray-100">
+                                Setelah Anda mendaftar dan login, Anda dapat langsung mengakses menu "Komunitas" untuk mulai berdiskusi, berbagi renungan, dan mendoakan satu sama lain.
+                            </p>
+                        </details>
                     </div>
                 </div>
+                
+                {{-- Jam Operasional Dihapus --}}
+
             </div>
 
             {{-- Right Side - Form --}}
             <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-                <form action="{{ route('contact.submit') }}" method="POST" class="space-y-6">
-                    @csrf
+                
+                {{-- Form diubah untuk Web3Forms --}}
+                <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                    
+                    {{-- Ganti dengan Access Key Anda --}}
+                    <input type="hidden" name="access_key" value="ff60ca3b-b266-4427-994c-35f56c0bcd0b">
+                    {{-- Tambahkan subjek email (opsional namun disarankan) --}}
+                    <input type="hidden" name="subject" value="Pesan Baru dari Formulir Kontak Website">
+                    {{-- Hapus @csrf --}}
                     
                     {{-- Name --}}
                     <div>
@@ -223,12 +215,12 @@
 
                     {{-- Subject --}}
                     <div>
-                        <label for="subject" class="block text-sm font-semibold text-dark-text mb-2">
+                        <label for="subject_options" class="block text-sm font-semibold text-dark-text mb-2">
                             Subjek <span class="text-red-500">*</span>
                         </label>
                         <select 
-                            id="subject" 
-                            name="subject" 
+                            id="subject_options" 
+                            name="subject_options" 
                             required
                             class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
                         >
@@ -272,8 +264,11 @@
                         </label>
                     </div>
 
-                    {{-- Submit Button --}}
-                    <button type="submit" class="w-full btn btn-primary btn-lg group">
+                    {{-- Submit Button (Dirapikan) --}}
+                    <button 
+                        type="submit" 
+                        class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all duration-300 group"
+                    >
                         Kirim Pesan
                         <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -285,20 +280,7 @@
     </div>
 </section>
 
-{{-- Map Section (Optional) --}}
-<section class="bg-gray-100 py-0">
-    <div class="container-fluid p-0">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.666666666667!2d106.8166666!3d-6.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTInMDAuMCJTIDEwNsKwNDgnNTguMCJF!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid" 
-            width="100%" 
-            height="400" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            class="grayscale hover:grayscale-0 transition-all duration-500"
-        ></iframe>
-    </div>
-</section>
+{{-- Map Section Dihapus dan diganti CTA --}}
+@include('components.cta-section')
 
 @endsection
