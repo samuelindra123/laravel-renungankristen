@@ -1,7 +1,6 @@
 <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-md w-full">
         
-        <!-- Logo & Header -->
         <div class="text-center mb-8">
             <div class="flex justify-center mb-4">
                 <div class="bg-gradient-to-br from-indigo-600 to-purple-600 p-4 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
@@ -14,7 +13,6 @@
             <p class="text-gray-600">Bergabunglah dalam persekutuan</p>
         </div>
 
-        <!-- Register Card -->
         <div class="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-8 border border-white/20">
             <div class="mb-6">
                 <h3 class="text-2xl font-semibold text-gray-800 text-center">Daftar Akun</h3>
@@ -23,7 +21,6 @@
 
             <form wire:submit.prevent="register" class="space-y-5">
                 
-                <!-- Name -->
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         <span class="flex items-center gap-2">
@@ -49,7 +46,6 @@
                     @enderror
                 </div>
 
-                <!-- Email -->
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         <span class="flex items-center gap-2">
@@ -75,7 +71,6 @@
                     @enderror
                 </div>
 
-                <!-- Password -->
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         <span class="flex items-center gap-2">
@@ -101,7 +96,6 @@
                     @enderror
                 </div>
 
-                <!-- Password Confirmation -->
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         <span class="flex items-center gap-2">
@@ -119,7 +113,6 @@
                     >
                 </div>
 
-                <!-- Terms -->
                 <div>
                     <label class="flex items-start gap-2">
                         <input 
@@ -144,25 +137,22 @@
                     @enderror
                 </div>
 
-                <!-- Submit Button -->
                 <button 
                     type="submit" 
                     class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
                     wire:loading.attr="disabled"
+                    wire:loading.class="opacity-75 cursor-not-allowed"
                 >
                     <span wire:loading.remove wire:target="register">Daftar Sekarang</span>
-                    <span wire:loading wire:target="register" class="flex items-center gap-2">
-                        <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Loading...
-                    </span>
+
+                    <svg wire:loading wire:target="register" class="hidden animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
                 </button>
 
             </form>
 
-            <!-- Login Link -->
             <div class="mt-6 text-center">
                 <p class="text-gray-600">
                     Sudah punya akun? 
@@ -173,7 +163,6 @@
             </div>
         </div>
 
-        <!-- Footer Quote -->
         <div class="mt-8 text-center">
             <p class="text-gray-500 text-sm italic">
                 "Sebab Aku ini mengetahui rancangan-Ku mengenai kamu, rancangan damai sejahtera dan bukan rancangan kecelakaan"

@@ -1,65 +1,59 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Auth\Login;
+use App\Livewire\Auth\Register;
+use App\Livewire\Auth\ForgotPassword;
+use App\Livewire\Auth\ResetPassword;
 use Illuminate\Support\Facades\Auth;
-// use App\Http\Livewire\Auth\Login; // Tidak diperlukan lagi di sini
-// use App\Http\Livewire\Auth\Register; // Tidak diperlukan lagi di sini
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-*/
+// ===================================
+// RUTE PUBLIK (Bisa diakses siapa saja)
+// ===================================
 
-// == RUTE PUBLIK ==
+// Mengarahkan halaman utama (root) ke view 'home'
+// Asumsi kamu punya file resources/views/home.blade.php
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('welcome'); 
+})->name('home');
 
+// Rute publik lainnya
 Route::get('/about', function () {
-    return view('about.about');
+    return view('about.about'); // Asumsi kamu punya file resources/views/about.blade.php
 })->name('about');
 
 Route::get('/contact', function () {
-    return view('contact.contact');
+    return view('contact.contact'); // Asumsi kamu punya file resources/views/contact.blade.php
 })->name('contact');
 
 
-// == RUTE KHUSUS TAMU (GUEST) ==
-// Rute-rute ini hanya dapat diakses oleh pengguna yang BELUM login.
+// ==================================================
+// RUTE TAMU (Hanya untuk yang BELUM login)
+// ==================================================
 Route::middleware('guest')->group(function () {
-    
-    // PERBAIKAN DI SINI:
-    // Kita panggil view-nya secara manual menggunakan Closure
-    // Ini adalah cara paling aman untuk merender komponen Livewire full-page
-    
-    Route::get('/login', function () {
-        // Asumsi file ada di: resources/views/livewire/auth/login.blade.php
-        return view('livewire.auth.login'); 
-    })->name('login');
-
-    Route::get('/register', function () {
-        // Asumsi file ada di: resources/views/livewire/auth/register.blade.php
-        return view('livewire.auth.register');
-    })->name('register');
+    Route::get('/login', Login::class)->name('login');
+    Route::get('/register', Register::class)->name('register');
+    Route::get('/forgot-password', ForgotPassword::class)->name('password.request');
+    Route::get('/reset-password/{token}', ResetPassword::class)->name('password.reset');
 });
 
 
-// == RUTE OTENTIKASI (AUTH) ==
-// Rute-rute ini hanya dapat diakses oleh pengguna yang SUDAH login.
+// ==================================================
+// RUTE OTENTIKASI (Hanya untuk yang SUDAH login)
+// ==================================================
 Route::middleware('auth')->group(function () {
     
-    // Halaman dashboard setelah login
+    // PERBAIKAN: Rute dashboard yang benar
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('dashboard'); // Asumsi kamu punya file resources/views/dashboard.blade.php
     })->name('dashboard');
     
-    // Proses Logout
+    // PERBAIKAN: Rute logout yang terpisah dan benar (menggunakan POST)
     Route::post('/logout', function () {
         Auth::logout();
         request()->session()->invalidate();
         request()->session()->regenerateToken();
-        // Arahkan ke halaman utama setelah logout
+        // Arahkan ke halaman utama (home) setelah logout
         return redirect('/'); 
     })->name('logout');
 });

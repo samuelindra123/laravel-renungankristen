@@ -1,7 +1,6 @@
 <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-md w-full">
         
-        <!-- Logo & Header -->
         <div class="text-center mb-8">
             <div class="flex justify-center mb-4">
                 <div class="bg-gradient-to-br from-indigo-600 to-purple-600 p-4 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
@@ -17,7 +16,6 @@
             </div>
         </div>
 
-        <!-- Login Card -->
         <div class="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-8 border border-white/20">
             <div class="mb-6">
                 <h3 class="text-2xl font-semibold text-gray-800 text-center">Masuk</h3>
@@ -26,7 +24,6 @@
 
             <form wire:submit.prevent="login" class="space-y-5">
                 
-                <!-- Email -->
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         <span class="flex items-center gap-2">
@@ -52,7 +49,6 @@
                     @enderror
                 </div>
 
-                <!-- Password -->
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         <span class="flex items-center gap-2">
@@ -78,7 +74,6 @@
                     @enderror
                 </div>
 
-                <!-- Remember & Forgot -->
                 <div class="flex items-center justify-between">
                     <label class="flex items-center gap-2">
                         <input 
@@ -88,28 +83,25 @@
                         >
                         <span class="text-sm text-gray-600">Ingat saya</span>
                     </label>
-                    <a href="#" class="text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+                    <a href="/forgot-password" class="text-sm text-indigo-600 hover:text-indigo-800 font-medium">
                         Lupa password?
                     </a>
                 </div>
 
-                <!-- Submit Button -->
                 <button 
                     type="submit" 
                     class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
                     wire:loading.attr="disabled"
+                    wire:loading.class="opacity-75 cursor-not-allowed"
                 >
                     <span wire:loading.remove wire:target="login">Masuk</span>
-                    <span wire:loading wire:target="login" class="flex items-center gap-2">
-                        <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Loading...
-                    </span>
+                    
+                    <svg wire:loading wire:target="login" class="hidden animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
                 </button>
 
-                <!-- Social Login -->
                 <div class="relative my-6">
                     <div class="absolute inset-0 flex items-center">
                         <div class="w-full border-t border-gray-300"></div>
@@ -139,7 +131,6 @@
 
             </form>
 
-            <!-- Register Link -->
             <div class="mt-6 text-center">
                 <p class="text-gray-600">
                     Belum punya akun? 
@@ -150,7 +141,6 @@
             </div>
         </div>
 
-        <!-- Footer Quote -->
         <div class="mt-8 text-center">
             <p class="text-gray-500 text-sm italic">
                 "Bersukacitalah dalam pengharapan, sabarlah dalam kesesakan, dan bertekunlah dalam doa!" 

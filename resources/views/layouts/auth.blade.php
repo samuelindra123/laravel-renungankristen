@@ -1,61 +1,24 @@
-<?php
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-namespace App\Http\Livewire\Auth;
+    <title>@yield('title', 'Renungan Kristen')</title>
 
-use App\Models\User;
-use Livewire\Component;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-class Register extends Component
-{
-    public $name = '';
-    public $email = '';
-    public $password = '';
-    public $password_confirmation = '';
-    public $terms = false;
-
-    protected $rules = [
-        'name' => 'required|min:3|max:255',
-        'email' => 'required|email|unique:users,email',
-        'password' => 'required|min:6|confirmed',
-        'terms' => 'accepted',
-    ];
-
-    protected $messages = [
-        'name.required' => 'Nama lengkap wajib diisi',
-        'name.min' => 'Nama minimal 3 karakter',
-        'email.required' => 'Email wajib diisi',
-        'email.email' => 'Format email tidak valid',
-        'email.unique' => 'Email sudah terdaftar',
-        'password.required' => 'Password wajib diisi',
-        'password.min' => 'Password minimal 6 karakter',
-        'password.confirmed' => 'Konfirmasi password tidak cocok',
-        'terms.accepted' => 'Anda harus menyetujui syarat dan ketentuan',
-    ];
-
-    public function updated($propertyName)
-    {
-        $this->validateOnly($propertyName);
-    }
-
-    public function register()
-    {
-        $this->validate();
-
-        $user = User::create([
-            'name' => $this->name,
-            'email' => $this->email,
-            'password' => Hash::make($this->password),
-        ]);
-
-        Auth::login($user);
-
-        return redirect('/dashboard');
-    }
-
-    public function render()
-    {
-        return view('livewire.auth.register')->layout('layouts.auth');
-    }
-}
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
+</head>
+<body class="font-sans antialiased text-gray-900 bg-gray-100">
+    <main>
+        {{ $slot }}
+    </main>
+    @livewireScripts
+</body>
+</html>
